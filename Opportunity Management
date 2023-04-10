@@ -1,0 +1,212 @@
+*** Settings ***
+Resource                ../Resources/Common.robot
+Suite Setup             Setup Browser
+Suite Teardown          End suite
+
+*** Test Cases ***
+create Opportunities without account name
+    [tags]              Opportunities               Git Repo Exercise
+    Appstate            Home
+    ClickText           Opportunities
+    ClickText           New
+    UseModal            On
+    Typetext            Opportunity Name            shalu
+    #Combobox           Search Accounts...          ChangeOwner Account
+    ClickText           Close Date
+    ClickText           Today
+    PickList            Stage                       Prospecting
+    PickList            Business Unit               Cloudfulcrum
+    PickList            Sales Owner                 Shalini
+    ClickText           Save
+    ClickText           Cancel
+
+create Opportunities with account name
+    ClickText           New
+    UseModal            On
+    Typetext            Opportunity Name            shalu
+    Combobox            Search Accounts...          ChangeOwner Account
+    ClickText           Close Date
+    ClickText           Previous Month
+    DropDown            Pick a Year                 2022
+    ClickText           10
+    ClickText           Close Date
+    PickList            Stage                       Prospecting
+    PickList            Business Unit               Cloudfulcrum
+    PickList            Sales Owner                 Shalini
+    ClickText           Save
+    ClickText           Opportunities
+    VerifyText          Recently Viewed
+    VerifyText          Opportunity Name
+    VerifyText          shalu                       Anchor=1
+
+create Opportunities with account name on DefaultTimeout   
+    ClickText           Account
+    clicktext           New                         Anchor=Import
+    UseModal            On
+    ClickText           Account Name
+    TypeText            Account Name                OppoParent
+    PickList            Sales Owner                 Shalini
+    ClickText           Save
+    UseModal            Off
+    ClickText           Cancel
+
+    ClickText           Opportunities
+    ClickText           New
+    UseModal            On
+    Typetext            Opportunity Name            nalu
+    Combobox            Search Accounts...          OppoParent
+    ClickText           Close Date
+    ClickText           Today
+    PickList            Stage                       Prospecting
+    PickList            Business Unit               Cloudfulcrum
+    PickList            Sales Owner                 Shalini
+    ClickText           Save
+    ClickText           Cancel
+
+update existing
+
+    ClickText           Opportunities
+    VerifyText          Recently Viewed
+    ClickText           nalu
+    ClickText           Details                     Anchor=Activity
+    ClickText           Edit Opportunity Name
+    TypeText            Opportunity Name            Mala
+    PickList            Type                        New Business
+    PickList            Stage                       Closed Won
+    ClickText           Save
+
+delete exsisting
+
+    ClickText           Opportunities
+    VerifyText          Recently Viewed
+    clicktext           Mala
+    Clicktext           Delete                      Anchor=Edit
+    ClickText           Delete
+    clicktext           Home
+
+Add contact role on the opportunity
+    [tags]              Opportunity                 Git Repo Exercise
+    Appstate            Home
+    LaunchApp           Sales
+    ClickText           Opportunities
+    VerifyText          Recently Viewed             timeout=120s
+    ClickText           New                         anchor=Import
+    ClickText           CloudFulcrum
+    ClickText           Next
+    VerifyText          Opportunity Information
+    UseModal            On                          # Only find fields from open modal dialog
+    TypeText            Opportunity Name            Opp4
+    ComboBox            Search Accounts...          xyz
+    PickList            *Business Unit              Cloudfulcrum
+    PickList            *Sales Owner                Anil Reddy
+    ClickText           *Close Date
+    ClickText           30
+    PickList            *Stage                      Prospecting
+    ClickText           Save                        partial_match=False
+    UseModal            Off
+    # Verify the text.
+    ClickText           Details
+    VerifyText          Opp4
+    VerifyText          xyz
+    # Add Contact Roles
+    ClickText           Related
+    ClickText           Contact Roles
+    UseModal            On
+    ClickText           Add Contact Roles
+    ComboBox            Search Contacts...          K Naidu
+    ClickText           Next
+    ClickText           Save
+    UseModal            Off
+    ClickText           Opportunities
+    ClickText           Opp4
+    ClickText           Related
+    VerifyText          Contact Roles
+    VerifyText          K Naidu
+
+Edit existing contact roles
+    [tags]              Opportunity                 Git Repo Exercise
+    Appstate            Home
+    LaunchApp           Sales
+    ClickText           Opportunities
+    VerifyText          Recently Viewed             timeout=120s
+    ClickText           Opp4
+    ClickText           Related
+    ClickText           Show more actions           anchor=Contact Roles(1)
+    ClickText           Add Contact Roles           anchor=Sandbox: TestingPOC
+    ComboBox            Search Contacts...          shalini Shende
+    ClickText           Next
+    ClickText           Save
+    UseModal            Off
+    VerifyText          Contact Roles\n(2)
+    VerifyPageHeader    K Naidu
+    VerifyPageHeader    shalini Shende
+
+Add Partners to the opportunity
+    Appstate            Home
+    LaunchApp           Sales
+    ClickText           Opportunities
+    VerifyText          Recently Viewed             timeout=120s
+    ClickText           Opp4
+    ClickText           Related
+    ClickText           Partners(0)
+    ClickText           New
+    ComboBox            Search Accounts...          Cloudfulcrum
+    UseTable            Primary
+    ClickCell           r2c3
+    ClickText           Advertiser                  anchor=Account
+    ComboBox            Search Accounts...          Account for CRT
+    ClickCell           r3c3
+    ClickText           Agency                      anchor=Account
+    ClickText           Save
+    ClickText           Opportunities
+    ClickText           Opp4
+    VerifyText          Partners(2)
+add Products
+    ClickText           Opportunities
+    VerifyText          Recently Viewed
+    ClickText           Opp4
+    ClickText           Products(0)                 Anchor=Quotes(0)
+    ClickText           New
+    TypeText            Product Name                oppo laptop1
+    TypeText            Product Code                001
+    ClickText           Active
+    ClickText           Save
+    ClickText           New
+    TypeText            Product Name                oppo laptop2
+    TypeText            Product Code                002
+    ClickText           Active
+    ClickText           Save
+    ClickText           New
+    TypeText            Product Name                oppo laptop4
+    TypeText            Product Code                005
+    ClickText           Active
+    ClickText           Save
+    ClickText           New
+    TypeText            Product Name                oppo laptop5
+    TypeText            Product Code                001
+    ClickText           Active
+    ClickText           Save
+
+price book
+    ClickText           Opportunities
+    VerifyText          Recently Viewed
+    ClickText           Opp4
+    ClickText           Products(0)
+    ClickText           Choose Price Book
+    PickList            Price Book                  MI Products
+    ClickText           Save
+    UseModal            On
+    ClickText           Save
+    UseModal            Off
+    ClickText           Add Products
+    UseModal            On
+    ComboBox            Search Products...        Oppo Laptop  
+    
+
+    
+   
+
+
+
+
+
