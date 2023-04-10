@@ -1,0 +1,116 @@
+*** Settings ***
+Resource          ../Resources/common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+
+
+*** Test Cases ***
+campaign create of active status
+    [tags]        Campaigns                   Git Repo Exercise
+    Appstate      Home
+    LaunchApp     Sales
+    ClickText     Campaigns
+    ClickText     New
+    Typetext      Campaign Name               Meena12
+    ClickText     Active
+    PickList      Type                        Email
+    ComboBox      Search Campaigns...         Camp7
+    ClickText     Save
+campaign create of inactive status
+    ClickText     Campaigns
+    ClickText     New
+    Typetext      Campaign Name               Meera12
+    PickList      Type                        Email
+    ComboBox      Search Campaigns...         Camp7
+    ClickText     Save
+
+    ClickText     Meena12
+    ClickText     Campaign Members
+    ClickText     Add Leads
+    ClickText     Search <Entity>Search LeadsK Naidushalini12 ShendeTina SmithManagershalini Shendeshalini ShendeLoading...New LeadShow more »To remove the selected record, press Backspace or Del
+    ComboBox      Search Leads...          K Naidu
+    ComboBox      Search Leads...           Tina Smith 
+    ComboBox      Search Leads...           shalini Shende
+    ComboBox      Search Leads...           Meera Shende
+    ClickText     Next
+    UseModal      On
+    PickList      Member Status             Responded
+    ClickText     Submit
+Delete an existing campaign which has campaign members in it.
+    [tags]                      Campaign                    Git Repo Exercise
+    LaunchApp                   Sales
+    ClickText                   Campaigns
+    VerifyText                  Recently Viewed             timeout=120s
+
+    Wait Until Keyword Succeeds                             1 min                       5 sec        ClickText    Camp3
+    ClickText                   Show more actions
+    ClickText                   Delete
+    UseModal                    On
+    ClickText                   Delete
+    UseModal                    Off
+    Wait Until Keyword Succeeds                             1 min                       5 sec        ClickText    Camp4
+    ClickText                   Show more actions
+    ClickText                   Delete
+    UseModal                    On
+    ClickText                   Delete
+    UseModal                    Off
+
+Clone Campaigns which is in active state
+    LaunchApp                   Sales
+    ClickText                   Campaigns
+    VerifyText                  Recently Viewed             timeout=120s
+    ClickText                   Select a List View
+    ClickText                   All Active Campaigns        timeout=120s
+    ClickText                   Camp3
+    # cloning existing campaign with active state
+    ClickText                   Clone                       anchor=Delete
+    UseModal                    On
+    ClickText                   Save
+    UseModal                    Off
+    ClickText                   Details                     anchor=Related
+    VerifyText                  Camp3
+
+Clone Campaigns which is in Inactive state
+    LaunchApp                   Sales
+    ClickText                   Campaigns
+    VerifyText                  Recently Viewed             timeout=120s
+
+    ClickText                   New                         anchor=Import
+    VerifyText                  Campaign Information
+    UseModal                    On                          # Only find fields from open modal dialog
+
+    TypeText                    Campaign Name               Camp5
+    PickList                    Type                        Advertisement
+    PickList                    Status                      In Progress
+    ClickText                   Save                        partial_match=False
+    UseModal                    Off
+    Sleep                       2
+
+    VerifyText                  Camp5
+
+    # cloning existing campaign with inactive state
+    ClickText                   Clone
+    UseModal                    On
+    TypeText                    Campaign Name*              Camp7
+    ClickText                   Save                        partial_match=False
+    UseModal                    Off
+
+    VerifyText                  Camp7
+    ClickText                   Details                     anchor=Related
+    VerifyText                  Camp7
+
+
+    ClickText    Close this window
+
+    ClickText    Add Leads
+    UseModal    On
+    ClickText    Search <Entity>Search LeadsK Naidushalini12 ShendeTina SmithManagershalini Shendeshalini ShendeLoading...New LeadShow more »To remove the selected record, press Backspace or Del.
+    ComboBox    Search Leads...    K Naidu
+    UseTable    Select 14 items
+    ClickCell    r2c2
+    ClickCell    r3c2
+    ClickCell    r4c2
+    ClickCell    r3c2
+    ClickCell    r5c2
+    ClickCell    r6c2
+
