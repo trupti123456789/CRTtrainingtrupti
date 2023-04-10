@@ -1,0 +1,82 @@
+*** Settings ***
+Resource          ../Resources/common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+
+*** Test Cases ***
+create Case(new)
+    [tags]        Case                        Git Repo Exercise
+    Appstate      Home
+    ClickText     More
+    ClickText     Case
+    ClickText     New
+    ComboBox      Search Contacts...          Akash K
+    ComboBox      Search Accounts...          Account 1
+    PickList      Status                      New
+    PickList      Case Origin                 Phone
+    PickList      Type                        Problem
+    PickList      Case Reason                 New problem
+    ClickText     Save
+
+create case(on hold)
+    ClickText     Cases
+    ClickText     New
+    ComboBox      Search Contacts...          Akash K
+    ComboBox      Search Accounts...          Account 1
+    PickList      Status                      On Hold
+    PickList      Case Origin                 Phone
+    PickList      Type                        Problem
+    PickList      Case Reason                 New problem
+    ClickText     Save
+
+create case(Escalated)
+    ClickText     Cases
+    ClickText     New
+ ComboBox       Search Contacts...          Akash K
+    ComboBox      Search Accounts...          Account 1
+    PickList      Status                      Escalated
+    PickList      Case Origin                 Phone
+    PickList      Type                        Problem
+    PickList      Case Reason                 New problem
+    ClickText     Save
+
+create case(Escalated except case origin)
+    ClickText     Cases
+    ClickText     New
+    ComboBox      Search Contacts...          Akash K
+    ComboBox      Search Accounts...          Account 1
+    PickList      Status                      Escalated
+    PickList      Type                        Problem
+    PickList      Case Reason                 New problem
+    PickList      Priority                    Medium
+    PickList      Type                        Problem
+    TypeText      Subject                     case created
+    ClickText     Save
+
+update existing
+    ClickText     Case
+    VerifyText    Recently Viewed
+    ClickText     00001005
+    ClickText     Details
+    ClickText     Edit Priority 
+    PickList      Priority                    High
+    PickList      Type                        Problem
+    ClickText     Save
+
+
+deleting case
+    ClickText     Case
+    ClickText     00001005
+    ClickText     Show more actions 
+    ClickText     Delete
+    ClickText     Delete
+    ClickText     Closed
+
+
+
+
+
+
+
+
+
