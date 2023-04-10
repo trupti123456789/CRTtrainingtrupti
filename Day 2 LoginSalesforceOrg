@@ -1,0 +1,57 @@
+*** Settings ***
+Resource                    ../Resources/Common.robot
+Suite Setup                   Setup Browser
+Suite Teardown                End suite
+Suite Setup             Open Browser    about:blank    chrome
+
+*** Test Cases ***
+Entering A Lead
+    [tags]                    Lead                        Git Repo Exercise
+    Appstate                  Home
+    LaunchApp                 Sales
+
+    ClickText                 Leads
+    VerifyText                Recently Viewed             timeout=120s
+    ClickText                 New                        anchor=Import
+    VerifyText                Lead Information
+    UseModal                  On                          # Only find fields from open modal dialog
+
+    Picklist                  Salutation                  Ms.
+    TypeText                  First Name                  rani
+    TypeText                  Last Name                   Smith
+    Picklist                  Lead Status                 Working
+    TypeText                  Phone                       +1223456785844             First Name
+    TypeText                  Company                     Growmore                    Last Name
+    TypeText                  Title                       Manager                     Address Information
+    TypeText                  Email                       rani.smith@gmail.com        Rating
+    TypeText                  Website                     https://www.growmore.com/
+
+    ClickText                 Lead Source
+    ClickText                 Advertisement
+    ClickText                 Save                        partial_match=False
+    UseModal                  Off
+    Sleep                     2
+    
+    ClickText                 Details                    anchor=Activity
+    VerifyText               Ms. rani Smith
+    VerifyText               Manager                     anchor=Title
+    VerifyText                                      +1223456785844
+   # VerifyField               Company                     Growmore
+   # VerifyField               Website                     https://www.growmore.com/
+    
+    ClickText                 Leads
+    VerifyText                rani Smith
+    VerifyText                Manager
+    VerifyText                Growmore
+
+Delete Tina Smith's Lead
+    [tags]                    Lead                        Git Repo Exercise
+    LaunchApp                 Sales
+    ClickText                 Leads
+    VerifyText                Recently Viewed             timeout=120s
+    
+    Wait Until Keyword Succeeds   1 min   5 sec   ClickText    rani Smith
+    ClickText                    Show more actions
+    ClickText                    Delete
+    ClickText                    Delete
+    ClickText                    Close
