@@ -1,0 +1,78 @@
+*** Settings ***
+Resource          ../Resources/Common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+
+*** Test Cases ***
+create lead for cloudfulcrum
+    [tags]        Lead                        Git Repo Exercise
+    Appstate      Home
+    ClickText     Lead
+    ClickText     New                         Anchor=Import
+    ClickText     New
+    UseModal      On
+    ClickText     Cloudfulcrum
+    ClickText     Next
+    PickList      Salutation                  Mrs.
+    TypeText      First Name                  Meera
+    TypeText      Last Name                   Shende
+    TypeText      Company                     Cloudfulcrum
+    PickList      Sales Owner                 Shalini
+    PickList      Lead Status                 Open
+    ClickText     Save
+update existing
+    Appstate      Home
+    ClickText     Lead
+    VerifyText    Recently Viewed
+    ClickText     Meera Shende
+    ClickText     Details                     Anchor=Activity
+    ClickText     Edit Name
+    TypeText      First Name                  Khushbu
+    TypeText      Last Name                   Lalwani
+    PickList      Lead Status                 Contacted
+    ClickText     Save
+ delete Lead
+    ClickText     Lead
+    VerifyText    Recently Viewed
+    ClickText     Khushbu Lalwani
+    ClickText     Show more actions
+    ClickText     Delete
+    ClickText     Cloesd
+
+ create lead for ReleaseOwl
+    [tags]        Lead                        Git Repo Exercise
+    Appstate      Home
+    ClickText     Lead
+    ClickText     New                         Anchor=Import
+    ClickText     New
+    UseModal      On
+    ClickText     Cloudfulcrum
+    ClickText     Next
+    PickList      Salutation                  Mrs.
+    TypeText      First Name                  Meeta
+    TypeText      Last Name                   Shinde
+    TypeText      Company                     ReleaseOwl
+    PickList      Sales Owner                 Shalini
+    PickList      Lead Status                 Open
+    ClickText     Save
+update existing
+    Appstate      Home
+    ClickText     Lead
+    VerifyText    Recently Viewed
+    ClickText     Meera Shende
+    ClickText     Details                     Anchor=Activity
+    ClickText     Edit Name
+    TypeText      First Name                  Khushi
+    TypeText      Last Name                   Lali
+    PickList      Lead Status                 Contacted
+    ClickText     Save
+ delete Lead
+    ClickText     Lead
+    VerifyText    Recently Viewed
+    ClickText     Khushi Lali
+    ClickText     Show more actions
+    ClickText     Delete
+    ClickText     Cloesd
+
+
+
