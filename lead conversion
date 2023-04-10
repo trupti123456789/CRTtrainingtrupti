@@ -1,0 +1,53 @@
+*** Settings ***
+Resource          ../Resources/common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+
+*** Test Cases ***
+create Case(new)
+    [tags]        Lead                        Git Repo Exercise
+    Appstate      Home
+    ClickText     Lead
+    ClickText     New                         Anchor=Import
+    UseModal      On
+    ClickText     Cloudfulcrum
+    ClickText     Next
+    ClickText     Lead Owner
+    TypeText      Lead Owner                  truptilead
+    PickList      Salutation                  Mrs.
+    TypeText      First Name                  shalini12
+    TypeText      Last Name                   Shende
+    TypeText      Company                     Cloudfulcrum
+    PickList      Sales Owner                 Shalini
+    PickList      Lead Status                 Open
+    ClickText     Save
+    clicktext     Cancel
+    clicktext     Converted
+    ClickText     Leads
+    VerifyText    Recently Viewed             timeout=120s
+    ClickText     shalini Shende
+    ClickText     Convert                     anchor=Edit
+    UseModal      On
+    ClickText     Don't create an opportunity upon conversion checkbox    on
+    ClickText     Convert                     anchor=Account
+    UseModal      On
+    ClickText     New Task
+    UseModal      On
+    ClickText     Subject
+    ClickText     Other
+    ClickText     Related To
+    ComboBox      Search Accounts...          Cloudfulcrum
+    ClickText     Status
+    PickList      Status                      Completed
+    ClickText     Save
+deleted converted lead
+    [tags]        Account                     Git Repo Exercise
+    Appstate      Home
+    ClickText     Account
+    UseModal      On
+    VerifyText    Recently Viewed
+    ClickText     Cloudfulcrum
+    ClickText     Delete
+    ClickText     Delete
+    UseModal      Off
+    ClickText     Home
