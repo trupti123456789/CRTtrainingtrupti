@@ -1,0 +1,68 @@
+*** Settings ***
+Resource          ../Resources/common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+
+
+*** Test Cases ***
+Entering a post in Chatter 
+    [tags]        Chatter                     Git Repo Exercise
+    Appstate      Home
+    LaunchApp     Sales
+
+
+    ClickText     Show more navigation items
+    ClickText     Chatter
+    ClickText     Share an update...
+    TypeText      //*[@id\='outerContainer']/div[1]/div[1]/div[1]/div[1]    truptipost1
+    ClickText     Share                       anchor=Attach up to 10 files
+
+    ClickText     Share an update...
+    TypeText      //*[@id\='outerContainer']/div[1]/div[1]/div[1]/div[1]    truptiPost2
+    ClickText     Share                       anchor=Attach up to 10 files
+
+    ClickText     Share an update...
+    TypeText      //*[@id\='outerContainer']/div[1]/div[1]/div[1]/div[1]    truptiPost3
+    ClickText     Share                       anchor=Attach up to 10 files
+
+    ClickText     Share an update...
+    TypeText      //*[@id\='outerContainer']/div[1]/div[1]/div[1]/div[1]    truptiPost4
+    ClickText     Share                       anchor=Attach up to 10 files
+
+    ClickText     Share an update...
+    TypeText      //*[@id\='outerContainer']/div[1]/div[1]/div[1]/div[1]    truptiPost5
+    ClickText     Share                       anchor=Attach up to 10 files
+
+    ClickText     Sort by
+    ClickText     Most Recent Activity
+    ClickText     Chatter
+
+*** Settings ***
+Resource          ../Resources/common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+
+
+*** Test Cases ***
+Login as a user and navigate to 'Chatter Groups'. Post atleast 10 posts in the group.
+    [tags]        Groups                     Git Repo Exercise
+    Appstate      Home
+    LaunchApp     Groups
+
+    ${i}          Set Variable               0
+    WHILE         ${i} < 10
+    
+        ClickText     TestCRTChatterGroup
+        ClickText     Share an update...
+        TypeText      Share an update...         Text ${i}
+        ClickText     Share
+    
+        VerifyText    Latest Post                timeout=120s
+        VerifyText    Test ${i}
+    
+        ${i}=          Evaluate                   ${i} + 1        
+    END    
+
+
+
+
