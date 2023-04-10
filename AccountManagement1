@@ -1,0 +1,218 @@
+*** Settings ***
+Documentation                   Test Suite For CRT starter
+Suite Setup                     Open Browser                about:blank                 chrome
+Library                         QForce
+Library                         String
+Suite Teardown                  Close All Browser
+
+
+*** Test Cases ***
+
+Create acc for billing
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    Clicktext                   Log In to sandbox
+    [tags]                      Account
+    ClickText                   Home
+    ClickText                   Sales
+    ClickText                   Account
+    ClickText                   New                         anchor=import
+    Verifytext                  Account Information
+    UseModal                    on                          # Only find fields from open modal dialog
+
+    TypeText                    Account Name                trupti
+    TypeText                    Billing Street              hiwari nagar
+
+
+    TypeText                    Billing City                Nagpur
+    TypeText                    Billing Country             India
+    TypeText                    Billing Zip/Postal Code     677888
+    PickList                    Sales Owner                 Shalini
+    ClickText                   Save                        partial_match=False
+    UseModal                    Off
+    Sleep                       2
+
+    ClickText                   Details                     anchor=Activity
+    VerifyText                  trupti
+    VerifyText                  hiwari nagar
+    VerifyText                  Nagpur
+
+Create acc for shippind
+
+    GoTo                        http://test.salesforce.com/
+
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    clicktext                   Log In to sandbox
+    [tags]                      Account
+    ClickText                   Home
+    ClickText                   Sales
+    ClickText                   Account
+    ClickText                   New                         anchor=import
+    Verifytext                  Account Information
+    UseModal                    on                          # Only find fields from open modal dialog
+
+    TypeText                    Account Name                trupti
+    TypeText                    Shipping                    Street                      hiwari nagar
+
+
+    TypeText                    Shipping                    City                        Nagpur
+    TypeText                    Shipping Country            India
+    TypeText                    Shipping Zip/Postal Code    677886
+    PickList                    Sales Owner                 Shalini
+    ClickText                   Save                        partial_match=False
+    UseModal                    Off
+    Sleep                       2
+
+    ClickText                   Details                     anchor=Activity
+    VerifyText                  trupti
+    VerifyText                  hiwari nagar
+
+
+create acc for billing and shipping
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    Clicktext                   Log In to sandbox
+    [tags]                      Account
+    ClickText                   Home
+    ClickText                   Sales
+    ClickText                   Account
+    ClickText                   New                         anchor=import
+    Verifytext                  Account Information
+    UseModal                    on                          # Only find fields from open modal dialog
+
+    TypeText                    Account Name                trupti
+    TypeText                    Billing Street              hiwari nagar
+
+
+    TypeText                    Billing City                Nagpur
+    TypeText                    Billing Country             India
+    TypeText                    Billing Zip/Postal Code     677888
+    PickList                    Sales Owner                 Shalini
+    TypeText                    Shipping                    Street                      hiwari nagar
+
+
+    TypeText                    Shipping                    City                        Nagpur
+    TypeText                    Shipping Country            India
+    TypeText                    Shipping Zip/Postal Code    677886
+    ClickText                   Save                        partial_match=False
+    UseModal                    Off
+    Sleep                       2
+create acc for update existing
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    Clicktext                   Log In to sandbox
+    [tags]                      Account
+    ClickText                   Home
+    ClickText                   Sales
+    UseModal                    on
+    ClickText                   Account
+    ClickText                   trupti
+    ClickText                   Details                     anchor=Activity
+    ClickText                   Edit Account Name
+    TypeText                    Account Name                Rani
+    Verifytext                  Additional Information
+    ClickText                   Edit Annual Revenue
+    TypeText                    Annual Revenue              50000
+    ClickText                   Save                        partial_match=False
+    VerifyText                  trupti
+    UseModal                    Off
+    Sleep                       2
+
+ acc for delete recent
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    Clicktext                   Log In to sandbox
+    LaunchApp                   Sales
+    ClickText                   Account
+    VerifyText                  Recently Viewed             timeout=120s
+
+   # Wait Until Keyword Succeeds                             1 min                       5 sec          
+     ClickText                trupti
+    ClickText                   Show more actions
+    ClickText                   Delete
+    ClickText                   Close
+
+create con and assign Owner
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    Clicktext                   Log In to sandbox
+    ClickText                   Accounts
+    Clicktext                   New                         anchor=Import
+    VerifyText                  Account Information
+    UseModal                    on                          # Only find fields from open modal dialog
+    TypeText                    Account Name                Deepali
+    PickList                    Sales Owner                 Shalini
+    ClickText                   Save
+    UseModal                    Off
+    Sleep                       2
+    Clicktext                   Contacts
+    Clicktext                   New                         anchor=Import
+    PickList                    Salutation                  Mrs.
+    TypeText                    First Name                  dipti
+    TypeText                    Last Name                   Chaudhary
+    ComboBox                    Search Accounts...          Deepali
+    ClickText                   Save
+    Clicktext                   Contacts
+    Clicktext                   New                         anchor=Import
+    PickList                    Salutation                  Mr.
+    TypeText                    First Name                  Amit
+    TypeText                    Last Name                   Chaudhary
+    ComboBox                    Search Accounts...          Deepali
+    ClickText                   Save
+    ClickText                   Account
+    ClickText                   Deepali
+    ClickText                   Change Owner                anchor=Vishnu Teja
+    UseModal                    On
+    ComboBox                    Search Users...             Navneeth Rokalla
+   # ClickText                   Change Owner                anchor=Navneeth Rokalla
+    UseModal                    Off
+    ClickText                   Contacts
+    ClickText                   dipti                       Chaudhary
+    VerifyText                  Contact Owner
+    ClickText                   Contacts
+    ClickText                   Amit                        Chaudhary
+    VerifyText                  Contact Owner
+account sharing
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                    Qazwsx123
+    Clicktext                   Log In to sandbox
+    ClickText                    Account
+    ClickText                    Deepali
+    ClickText                    Details                    anchor=Activity
+    ClickText                    Show more actions
+    ClickText                    Sharing
+    UseModal                     On
+    ClickText                    Pick an object
+    ComboBox                     Search User...             Vishnu Teja
+    Clicktext                    Save
+    UseModal                     Off
+
+import from csv(NA)
+    GoTo                        https://test.salesforce.com/
+    TypeText                    username                    vishnu.r@cloudfulcrum.com.testingpoc
+    TypeText                    password                     Qazwsx123
+    ClickText                   Log In to sandbox
+    ClickText                   Accounts
+    ClickText                   Import                       anchor=New
+    ClickText                    Accounts And Contacts
+    ClickText                    Add new records
+    ClickText                    CSV
+
+    
+                            
+
+
+
+
+
+
+
+
+
