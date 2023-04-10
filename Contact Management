@@ -1,0 +1,103 @@
+*** Settings ***
+Resource           ../Resources/common.robot
+Suite Setup        Setup Browser
+Suite Teardown     End suite
+
+*** Test Cases ***
+create contact
+    [tags]         Contacts                    Git Repo Exercise
+    Appstate       Home
+    LaunchApp      Sales
+
+    ClickText      Contacts
+    VerifyText     Recently Viewed             timeout=120s
+    ClickText      New                         anchor=Import
+    UseModal       On                          # Only find fields from open modal dialog
+    ClickText      New                         anchor=Import
+    Picklist       Salutation                  Ms.
+    TypeText       First Name                  Ranu
+    TypeText       Last Name                   Pande
+    TypeText       Phone                       +12234567858449
+    TypeText       Email                       tina.smith@gmail.com
+    ComboBox       Search Accounts...          Deepali
+    ClickText      Title                       CRT Training
+    ClickText      Mobile                      78675656
+    VerifyText     Address Information
+    ComboBox       Search Address              19,Sri Sai Nagar Arodhayna colony                   anchor=Other Address
+    ClickText      Save                        partial_match=False
+    UseModal       Off
+    Sleep          2
+    ClickText      Details                     anchor=Chatter
+    VerifyText     Ms. Ranu Pande
+    VerifyField    Phone                       +12234567858449
+    ClickText      Contacts
+    VerifyText     Ranu Pande
+update existing
+    ClickText      Contacts
+    ClickText      Ranu Pande
+    UseModal       On
+    ClickText      Details                     anchor=Activity
+    TypeText       Name                        nisha murti
+    ClickText      Edit Title
+    TypeText       Title                       CRT COPADO training
+    ClickText      Save
+    UseModal       Off
+    Sleep          2
+delete existing
+    ClickText      Contacts
+    ClickText      Ranu Pande
+    # Clicktext    Show more Action
+    ClickText      Delete
+    ClickText      Close
+
+change owner
+    ClickText      Contacts
+    ClickText      New                         anchor=Import
+    UseModal       On                          # Only find fields from open modal dialog
+    ClickText      New                         anchor=Import
+    Picklist       Salutation                  Ms.
+    TypeText       First Name                  tina
+    TypeText       Last Name                   maske
+    ComboBox       Search Accounts...          Deepali
+    ClickText      Save
+    ClickText      Contacts
+    ClickText      New                         anchor=Import
+    UseModal       On                          # Only find fields from open modal dialog
+    ClickText      New                         anchor=Import
+    Picklist       Salutation                  Ms.
+    TypeText       First Name                  ratna
+    TypeText       Last Name                   pugaria
+    ComboBox       Search Accounts...          Deepali
+    ClickText      Save
+    ClickText      Deepali
+    UseModal         On
+    ClickText      Change  Owner 
+    ComboBox       Search Users...             Navneeth Rokalla
+    ClickText      Change Owner
+    ClickText      Contacts
+    ClickText      tina maske
+    VerifyText     Contact Owner
+    ClickText      Contacts
+    ClickText      ratna pugaria
+    VerifyText     Contact Owner
+
+CSV file Import(NA)
+    [tags]         Contact                     SingleDataPoint
+    Appstate       Home
+    LaunchApp      Sales
+
+    ClickText      Contacts
+    VerifyText     Recently Viewed             timeout=120s
+    ClickText      New
+    VerifyText     Contact Information
+    UseModal       On                          # Only find fields from open modal dialog
+
+    TypeText       First Name                  ${First Name}
+    TypeText       Last Name                   ${Last Name}
+    ComboBox       Search Accounts...          ${Account Name}
+    TypeText       Phone                       ${Phone}                    First Name
+
+    ClickText      Save                        partial_match=False
+    UseModal       Off
+    Sleep          1
+
