@@ -1,0 +1,4 @@
+Permission Set Label,	Description,	License
+CRM User,Denotes that the user is a Sales Cloud or Service Cloud user,CRM User
+Salesforce CMS Integration Admin,Gives the admin data access and the permissions to integrate Salesforce CMS with any endpoint,Cloud Integration User
+Your Account App Admin User,Manage your Salesforce subscriptions with the Your Account app,Your Account App
