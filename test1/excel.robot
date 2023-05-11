@@ -25,9 +25,10 @@ Verify Products
 Update Product Id
     [Documentation]     Update product id to an excel sheet and save changes
     [Tags]              excel    products    update
+    Close All Excel Documents
     GoTo                ${webshop}
     VerifyText          Find your spirit animal
-    Close All Excel Documents
+  
 
     # Open existing workbook
     ${document}=        Open Excel Document    ${excel_worksheet}    products
