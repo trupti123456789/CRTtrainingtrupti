@@ -49,4 +49,23 @@ Update Product Id
     # Save changes to excel and commit to git
     Save Excel Document  ${excel_worksheet}
     Commit And Push     ${excel_worksheet}     ${git_branch}
+--------------------------------------------------------------------------------------------------
+*** Settings ***
+Library                 QWeb
+Library                 ExcelLibrary
+Library                 String
+Library                 ../libraries/GitOperations.py
 
+*** Variables ***
+${BROWSER}              chrome
+${webshop}              https://qentinelqi.github.io/shop/
+${excel_worksheet}      ${CURDIR}/../data/products_worksheet.xlsx
+${git_branch}           main
+
+*** Keywords ***
+Setup Browser
+    Open Browser        about:blank     ${BROWSER}
+    Evaluate            random.seed()    random    # initialize random generator
+
+End Suite
+    Close All Browsers
