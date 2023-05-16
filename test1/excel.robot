@@ -28,10 +28,15 @@ Update Product Id
     Close All Excel Documents
     GoTo                ${webshop}
     VerifyText          Find your spirit animal
-  
+    
 
     # Open existing workbook
-    ${document}=        Open Excel Document    ${excel_worksheet}    products
+    ${document}=        Open Excel Document    ${excel_worksheet}    products 
+    FOR    ${row}    IN    @{product_names}
+        FOR    ${cell}    IN    @{row}
+            Handle Cell    ${cell}
+        END
+    END
 
     # Create new unique product id
     ${new_id}=          Generate Random String    length=6    chars=[NUMBERS]
