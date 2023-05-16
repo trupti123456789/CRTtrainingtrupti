@@ -33,13 +33,9 @@ Update Product Id
     # Open existing workbook
     ${document}=        Open Excel Document    ${excel_worksheet}    products 
       ${product_id}=   Read Excel Column    col_num=2    max_num=6    row_offset=1    sheet_name=Fur
-    FOR    ${row}    IN    @{product_id}
-        FOR    ${cell}    IN    @{row}
-            Handle Cell    ${cell}
-        END
-    END
-    FOR    ${itemm}    IN    @{product_id}
-        VerifyText           ${itemm}
+
+    FOR    ${item}    IN    @{product_id}
+        VerifyText           ${item}
     END
 
     # Create new unique product id
