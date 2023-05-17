@@ -3,7 +3,7 @@ Resource                      ../resourcefolder/commonaccountexel.robot
 Library                       DataDriver    reader_class=TestDataApi    name=Lead.csv    #iterates through the Leads csv
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
-Test Template                 Entering A Lead With Data
+Test Template               Reading account field
 Library                        QForce
 *** Test Cases ***
 reading a account With Data with  ${Account_Name}   ${Sales_Owner}    ${Phone}    ${Company}    ${Website}
@@ -19,7 +19,7 @@ Entering A Lead With Data
 *** Test Case ***
      Appstate        Home
      clicktext       Account
-     VerifyText     ${Account_Name}
+     VerifyText     ${Account Name}
      VerifyText    ${Sales_Owner}
      VerifyText    ${Phone}
      VerifyText    ${Type}
