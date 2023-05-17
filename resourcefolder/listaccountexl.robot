@@ -9,7 +9,7 @@ Library                         ../libraries/GitOperations.py
 *** Variables ***
 # Salesforce instance. NOTE: Should be overwritten in CRT variables
 ${home_url}                     ${login_url}/lightning/page/home
-${listaccount}                  ${CURDIR}/../data/accountexcelmultipl.xlsx
+${listaccount}                  ${CURDIR}/../data/accountexcelmultip.xlsx
 ${git_branch}                   main
 
 *** Keywords ***
