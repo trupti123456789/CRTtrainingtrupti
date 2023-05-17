@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                 ../resourcefolder/commonaccountexcel.robot
+Resource                 ../resourcefolder/listaccountexl.robot
 Suite Setup              Setup Browser
 Suite Teardown           End suite
 Test Teardown            Close All Excel Documents
