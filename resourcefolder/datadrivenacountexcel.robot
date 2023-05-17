@@ -17,8 +17,9 @@ Entering A Lead With Data
     LaunchApp                 Sales
 
 *** Test Case ***
-    Appstate        Home
-     ClickText     ${Account_Name}
+     Appstate        Home
+     clicktext       Account
+     VerifyText     ${Account_Name}
      VerifyText    ${Sales_Owner}
      VerifyText    ${Phone}
      VerifyText    ${Type}
