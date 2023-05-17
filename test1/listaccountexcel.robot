@@ -7,8 +7,7 @@ Test Teardown            Close All Excel Documents
 read all the Account fields from excel sheet.
     Appstate             Home
     ClickText            Account
-    ClickText             ${Account Name} 
-    ClickText            Details
+   
     # Open existing workbook
     ${document} =        Open Excel Document         ${listaccount}                Account
 
