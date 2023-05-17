@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                      ../resourcefolder/commonaccountexcel.robot
+Resource                      ../resourcefolder/commonaccountexel.robot
 Library                       DataDriver    reader_class=TestDataApi    name=Lead.csv    #iterates through the Leads csv
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
