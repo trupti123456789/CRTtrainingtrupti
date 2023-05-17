@@ -13,4 +13,4 @@ read all the Account fields from excel sheet.
     ${document} =        Open Excel Document    ${Accountexcel_worksheet}     Account
 
     # Start reading values from the second row, max number needs to be provided with offset
-    ${product_names}=   Read Excel Column    col_num=1    max_num=1    row_offset=1    sheet_name=Sheet1
+    ${Account Name} =   Read Excel Column    col_num=1    max_num=1    row_offset=1    sheet_name=Sheet1
