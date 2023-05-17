@@ -10,7 +10,7 @@ Library                 ../libraries/GitOperations.py
 ${username}               YOUR USERNAME HERE
 ${login_url}              https://YOURDOMAIN.my.salesforce.com          # Salesforce instance. NOTE: Should be overwritten in CRT variables
 ${home_url}               ${login_url}/lightning/page/home
-${excel_worksheet}      ${CURDIR}/../data/accountexcel123.xlsx
+${Accountexcel_worksheet}      ${CURDIR}/../data/accountexcel123.xlsx
 ${git_branch}           main
 
 *** Keywords ***
