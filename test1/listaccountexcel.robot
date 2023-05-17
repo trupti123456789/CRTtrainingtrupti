@@ -16,3 +16,4 @@ read all the Account fields from excel sheet.
     ${Sales Owner} =     Read Excel Column           col_num=2                   max_num=1    row_offset=1    sheet_name=Sheet1
     ${Phone} =           Read Excel Column           col_num=3                   max_num=1    row_offset=1    sheet_name=Sheet1
     ${Industry} =        Read Excel Column           col_num=5                   max_num=1    row_offset=1    sheet_name=Sheet1
+    ${Account Name} =    Read Excel Column           col_num=1                   max_num=1    row_offset=2    sheet_name=Sheet1
