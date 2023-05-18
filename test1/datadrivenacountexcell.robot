@@ -22,6 +22,7 @@ REading an account With Data
     clicktext      Account
     clicktext      ${Account Name}
     clicktext      Details
+    VerifyText     ${Account Name}        anchor=Fax
     VerifyText     ${Sales Owner}
     VerifyText     ${Phone}                    anchor= Fax
     VerifyText     ${Type}
