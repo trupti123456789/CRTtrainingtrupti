@@ -5,7 +5,7 @@ Suite Setup        Setup Browser
 Suite Teardown     End suite
 Test Template      Reading account field
 Library            QForce
-Suite Setup        OpenBrowser    about:blank    chrome
+Suite Setup        OpenBrowser    about:blank    Chrome
 *** Test Cases ***
 reading an account With Data with  ${Account_Name}   ${Sales_Owner}    ${Phone}    ${Company}    ${Website}
     [Tags]         AllData
