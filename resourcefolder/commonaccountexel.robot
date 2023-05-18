@@ -2,7 +2,7 @@
 Library                   QWeb
 Library                   QForce
 Library                   String
-
+Suite Setup        OpenBrowser    about:blank    Chrome
 
 *** Variables ***
 ${home_url}               ${login_url}/lightning/page/home
