@@ -17,6 +17,17 @@ read all the Account fields from excel sheet.
     ${Phone} =           Read Excel Column           col_num=3                   max_num=3    row_offset=1    sheet_name=Sheet1
     ${Industry} =        Read Excel Column           col_num=5                   max_num=3    row_offset=1    sheet_name=Sheet1
   
+    $[i] =3
+
+    FOR        $[i]   IN     @{Account_Name}
+        VerifyText    
+    END
+
+
+
+
+
+
      FOR    ${item}    IN    @{Account Name} 
         VerifyText           ${item}
     END
