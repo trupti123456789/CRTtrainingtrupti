@@ -35,9 +35,6 @@ Create some Test data records for 'PE Team Member' object
     VerifyItem       utility:setup               tag=lightning-icon
     ClickText    Setup    anchor=Salesforce Help
 
-    
-
-
     ClickText        Setup for current app
     SwitchWindow     NEW
     VerifyText       Setup Home
