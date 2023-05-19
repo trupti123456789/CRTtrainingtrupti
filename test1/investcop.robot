@@ -33,7 +33,7 @@ Create some Test data records for 'PE Team Member' object
  Login as 'SSO - PE Europe Platform User’ profile user 
 
     VerifyItem       utility:setup               tag=lightning-icon
-    ClickText    Setup    anchor=Salesforce Help
+    ClickText        Setup                       anchor=Salesforce Help
 
     ClickText        Setup for current app
     SwitchWindow     NEW
