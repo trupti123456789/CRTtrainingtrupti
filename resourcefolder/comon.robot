@@ -6,8 +6,7 @@ Suite Setup        OpenBrowser    about:blank    chrome
 
 *** Variables ***
 ${home_url}               ${login_url}/lightning/page/home
-
-
+${url}        https://investcorp--devfulcrum.sandbox.lightning.force.com/lightning/r/Account/0011x00001mmf3fAAA/view
 *** Keywords ***
 Setup Browser
     Set Library Search Order                          QWeb                   QForce
