@@ -31,6 +31,13 @@ Create some Test data records for 'PE Team Member' object
     PickList         Default                     No
     ClickText        Save                        partial_match=False
  Login as 'SSO - PE Europe Platform User’ profile user 
+
+    VerifyItem       utility:setup               tag=lightning-icon
+    ClickText        Setup                       anchor=Salesforce Help
+    ClickText        Setup for current app
+    SwitchWindow     NEW
+    VerifyText       Setup Home
+
     ClickText        Setup                       anchor=Salesforce Help
     ClickText        Opens in a new tab
     SwitchWindow     NEW
