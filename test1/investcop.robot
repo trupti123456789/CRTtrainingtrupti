@@ -151,5 +151,6 @@ Contact on 'Investcorp Employee' Contact Record Type
     SwitchWindow    2
     TypeText         Quick Find                  Custom Labels
     ClickText       Custom Labels
+    ClickText       InvestCorp account Id
 
 
