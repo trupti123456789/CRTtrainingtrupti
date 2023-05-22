@@ -204,5 +204,14 @@ And with Evaluate parse the url using Python:
 
     ${url}=  Evaluate  $href_content.split(".")[1]
     FOR        $[i]   IN     @{url}.split
-        Log To Console ${url}
+        Log  ${url}
+    END
+
+
+    ${x}=    5
+
+    IF    ${x} > 0
+        Log to console   ${x} is positive
+    ELSE
+        Log to console   ${x} is negative
     END
