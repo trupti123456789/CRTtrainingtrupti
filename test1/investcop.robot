@@ -203,3 +203,6 @@ Edit Call Note' button Remove all B on Call Note Screen
 And with Evaluate parse the url using Python:
 
     ${url}=  Evaluate  $href_content.split(".")[1]
+    FOR        $[i]   IN     @{url}.split
+        Log To Console ${url}
+    END
