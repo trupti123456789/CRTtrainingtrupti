@@ -193,7 +193,7 @@ edit Call Note on account record without Investcorp Attendee
     ClickText        Save
 Edit Call Note' button Remove all B on Call Note Screen 
     ###############
-    ${url}        https://investcorp--devfulcrum.sandbox.lightning.force.com/lightning/r/Account/0011x00001mmf3fAAA/view
+    ${url}=       https://investcorp--devfulcrum.sandbox.lightning.force.com/lightning/r/Account/0011x00001mmf3fAAA/view
     Values=       ${url}.split("/")
 
 
