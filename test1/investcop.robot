@@ -94,7 +94,7 @@ Create CIE Meeting as Email Recipients field blank
     ClickText        Next
     UseModal         On
     TypeText         Account Name                HF_Account2
-    ComboBox         Search People...           Chris Mason
+    ComboBox         Search People...            Chris Mason
     PickList         Investor Type               Bank
     PickList         Billing Country             Armenia
     ClickText        Save                        partial_match=False
@@ -153,7 +153,7 @@ Contact on 'Investcorp Employee' Contact Record Type
     ClickText        Custom Labels
     ClickText        InvestCorp_account_Id
     ClickText        Edit
-    TypeText         Value                       
+    TypeText         Value
     ClickText        Save
 Login as 'PRMW standard User' profile 
     ClickText        Setup                       anchor=Salesforce Help
@@ -176,23 +176,23 @@ create Call Note on account record with Investcorp Attendee
     PickList         Type                        Meeting
     TypeText         Summary General Meeting Notes                           First Meeting
     DropDown         Client Attendee             Contact2 Contact2
-    DropDown         Investcorp Attendee 
+    DropDown         Investcorp Attendee
     clicktext        Date
     ClickText        Today
     TypeText         Summary General Meeting Notes                           First Meeting
-    ClickText        Save 
+    ClickText        Save
 edit Call Note on account record without Investcorp Attendee 
     ClickText        HF_Account1
-    ClickText       Edit Call Note
+    ClickText        Edit Call Note
     PickList         Type                        Meeting
     TypeText         Summary General Meeting Notes                           First Meeting
     DropDown         Client Attendee             Contact2 Contact2
     clicktext        Date
     ClickText        Today
     TypeText         Summary General Meeting Notes                           First Meeting
-    ClickText        Save 
+    ClickText        Save
 Edit Call Note' button Remove all B on Call Note Screen 
-   ###############
-   
-
+    ###############
+    Log              ${url}
+    ${urll}=          Evaluate                    $url.split("'")[1]
 
