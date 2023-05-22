@@ -33,7 +33,7 @@ Create some Test data records for 'PE Team Member' object
     SwitchWindow           NEW
     VerifyText             Setup Home
 
-    ClickText              Setup                       anchor=
+    ClickText              Setup                       anchor=Salesforce Help
     ClickText              Opens in a new tab
     SwitchWindow           NEW
     SwitchWindow           2
