@@ -202,7 +202,7 @@ Edit Call Note' button Remove all B on Call Note Screen
     ${i}=                Set Variable    6
 And with Evaluate parse the url using Python:
 
-    ${url}=  Evaluate  $href_content.split(".")[1]
+    ${url}=  Evaluate  $href_content.split("/")
     FOR        $[i]   IN     ${url}.split
         Log  ${url}
     END
