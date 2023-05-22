@@ -194,5 +194,7 @@ edit Call Note on account record without Investcorp Attendee
 Edit Call Note' button Remove all B on Call Note Screen 
     ###############
     Log              ${url}
-    ${urll}=          Evaluate                    $url.split("'")[1]
+    Values=       ${url}.split("/")
+
+
 
