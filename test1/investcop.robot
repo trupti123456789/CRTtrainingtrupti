@@ -199,7 +199,7 @@ Edit Call Note' button Remove all B on Call Note Screen
 
 
     ${href_content}=     GetUrl
-
+    ${i}=                Set Variable    6
 And with Evaluate parse the url using Python:
 
     ${url}=  Evaluate  $href_content.split(".")[1]
@@ -208,7 +208,7 @@ And with Evaluate parse the url using Python:
     END
 
 
-    ${x}=    5
+    ${x}=    Set Variable    5
 
     IF    ${x} > 0
         Log to console   ${x} is positive
