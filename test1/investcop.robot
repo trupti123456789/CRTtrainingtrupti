@@ -193,8 +193,13 @@ edit Call Note on account record without Investcorp Attendee
     ClickText        Save
 Edit Call Note' button Remove all B on Call Note Screen 
     ###############
-    ${url}=       https://investcorp--devfulcrum.sandbox.lightning.force.com/lightning/r/Account/0011x00001mmf3fAAA/view
+    ${url}=       "https://investcorp--devfulcrum.sandbox.lightning.force.com/lightning/r/Account/0011x00001mmf3fAAA/view"
     Values=       ${url}.split("/")
 
 
 
+    ${href_content}=     GetAttribute //a[contains(text(), "redirectlink")]     href
+
+And with Evaluate parse the url using Python:
+
+    ${url}=  Evaluate  $href_content.split("'")[1]
