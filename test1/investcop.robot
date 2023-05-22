@@ -123,6 +123,9 @@ Test Account with 'CI Account' Record Type
     MultiPickList          Relationship                AD
     ClickText              Move selection to Chosen    anchor=Available
     ClickText              Save                        partial_match=False
+     ${href_content}=       GetUrl
+    ${url}=                Evaluate                    $href_content.split("/")[6]
+     
     UseModal               Off
 Contact on 'Investcorp Employee' Contact Record Type 
     ClickText              Contacts
@@ -195,7 +198,4 @@ Edit Call Note' button Remove all B on Call Note Screen
     ###############
 
 
-    ${href_content}=       GetUrl
-    ${i}=                  Set Variable                6
-    ${url}=                Evaluate                    $href_content.split("/")[6]
-     
+   
