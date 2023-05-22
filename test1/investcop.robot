@@ -7,13 +7,6 @@ Suite Teardown             End suite
 Create some Test data records for 'PE Team Member' object             
     [tags]                 Account                     Git Repo Exercise
     Appstate               Home
-    #ClickText             Setup                       anchor=Salesforce Help
-    #ClickText             Opens in a new tab
-    #SwitchWindow          NEW
-    # SwitchWindow         2
-    # ClickText            App Launcher
-    #TypeText              Quick Find                  PE-Europe
-    # ClickText            PE-Europe
     ClickText              PE Team Members
     ClickText              New                         anchor=Import
     PickList               Team Member                 Benjamin Marino
@@ -30,7 +23,7 @@ Create some Test data records for 'PE Team Member' object
     PickList               Group                       Benelux
     PickList               Default                     No
     ClickText              Save                        partial_match=False
- Login as 'SSO - PE Europe Platform User’ profile user 
+ Login as 'SSO - PE Europe Platform User' profile user 
 
     VerifyItem             utility:setup               tag=lightning-icon
     ClickText              Setup                       anchor=Salesforce Help
