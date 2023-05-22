@@ -13,11 +13,13 @@ Create some Test data records for 'PE Team Member' object
     PickList               Group                       Benelux
     PickList               Default                     Yes
     ClickText              Save                        partial_match=False
+    ClickText              PE Team Members
     ClickText              New                         anchor=Import
     PickList               Team Member                 Gustav Granryd
     PickList               Group                       Benelux
     PickList               Default                     No
     ClickText              Save                        partial_match=False
+    ClickText              PE Team Members
     ClickText              New                         anchor=Import
     PickList               Team Member                 Owen Li
     PickList               Group                       Benelux
