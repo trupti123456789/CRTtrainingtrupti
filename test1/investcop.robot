@@ -123,6 +123,7 @@ Test Account with 'CI Account' Record Type
     MultiPickList          Relationship                AD
     ClickText              Move selection to Chosen    anchor=Available
     ClickText              Save                        partial_match=False
+    ClickText              Investcorp [M]
      ${href_content}=       GetUrl
     ${url}=                Evaluate                    $href_content.split("/")[6]
      
@@ -156,6 +157,7 @@ Contact on 'Investcorp Employee' Contact Record Type
     ClickText              Custom Labels
     ClickText              InvestCorp_account_Id
     ClickText              Edit
+    ClickText              Value
     TypeText               Value                       ${url}
     ClickText              Save
 Login as 'PRMW standard User' profile 
