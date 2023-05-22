@@ -37,8 +37,8 @@ Create some Test data records for 'PE Team Member' object
     ClickText              Opens in a new tab
     SwitchWindow           NEW
     SwitchWindow           2
-    TypeText               Quick Find                  Profile
-    ClickText              profile
+    TypeText               Quick Find                  Profiles
+    ClickText              profiles
     ClickText              SSO - PE Europe Platform
     ClickText              View Users
     ClickText              Bersch, Tim
@@ -72,6 +72,7 @@ Create CIE Meeting as Email Recipients field populated.
     ClickText              Move selection to Chosen    anchor=Available
     MultiPickList          Email Recipients            Jose Pfeifer
     ClickText              Move selection to Chosen    anchor=Available
+    picklist               Subject                     Call
     ClickText              Save
     UseModal               Off
 Create CIE Meeting as Email Recipients field blank
