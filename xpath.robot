@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                    ../resourcefolder/Comon.robot
+Resource                    ../Resources/Common.robot
 Suite Setup                 Setup Browser
 Suite Teardown              End suite
 Library                     QMobile
