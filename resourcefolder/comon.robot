@@ -12,7 +12,7 @@ ${login_url}                       https://investcorp--devfulcrum.sandbox.lightn
 
 ${home_url}                     ${login_url}/lightning/page/home
 
-${password} Investcorp@11
+${password}                     Investcorp@11
 *** Keywords ***
 Setup Browser
     Set Library Search Order    QWeb                        QForce
