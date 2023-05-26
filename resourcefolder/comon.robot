@@ -7,12 +7,10 @@ Suite Setup                     OpenBrowser                 about:blank         
 *** Variables ***
 ${home_url}                     ${login_url}/lightning/page/home
 ${username}                     mounika.t@cloudfulcrum.com.devfulcrum
-
 ${login_url}                       https://investcorp--devfulcrum.sandbox.lightning.force.com/
-
 ${home_url}                     ${login_url}/lightning/page/home
-
 ${password}                     Investcorp@11
+${fullID}  
 *** Keywords ***
 Setup Browser
     Set Library Search Order    QWeb                        QForce
