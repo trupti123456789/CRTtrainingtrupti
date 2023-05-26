@@ -337,12 +337,14 @@ Duplicate Rule: Contact Unique First Name Last Name and Mobile or Phone or Email
     ClickText           Close this window           anchor=Close error dialog
     UseModal            Off
 Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account) & try to change Account’s Name  
-
     ClickText           Setup                       anchor=Salesforce Help
     ClickText           Opens in a new tab
     SwitchWindow        NEW
-    TypeText            Quick Find                  Users
-    ClickText           Users                       anchor=User Management Settings
+    SwitchWindow        2
+    TypeText            Quick Find                  Profiles
+    ClickText           profiles
+    ClickText           PRMW Standard User
+    ClickText           View Users
     ClickText           Alarayedh, Loai
     ClickText           Login
     ClickText           Accounts
@@ -363,12 +365,18 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText           Setup                       anchor=Salesforce Help
     ClickText           Opens in a new tab
     SwitchWindow        NEW
-    TypeText            Quick Find                  Users
-    ClickText           Users                       anchor=User Management Settings
+    SwitchWindow        2
+    TypeText            Quick Find                  Profiles
+    ClickText           profiles
+    ClickText           PRMW Standard User
+    ClickText           View Users
     ClickText           Callahan, Michael
     ClickText           Login
-    
     ClickText           Accounts
+    ClickText           Select a List View
+    ClickText           All Accounts
+    
+    ClickText                ${url}
     ClickText           Select a List View
     ClickText           All Accounts
     ClickText           Edit
