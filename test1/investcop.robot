@@ -352,8 +352,10 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     PickList            Investor Type               Bank
     ClickText           Save                        partial_match=False
     ClickText           Log out as Loai Alarayedh
-    Typetext            Username                    ${username}
-    Typetext            Password                    ${password}
+    GoTo                ${login_url} 
+    TypeText            Username                    ${username}
+    TypeText            Password                    ${password}
+    Cli
     ClickText           Setup                       anchor=Salesforce Help
     ClickText           Opens in a new tab
     SwitchWindow        NEW
