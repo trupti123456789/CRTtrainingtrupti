@@ -346,10 +346,24 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText           Alarayedh, Loai
     ClickText           Login
     ClickText           Accounts
-    ClickText           New                         anchor= Discover Companies                      
+    ClickText           New                         anchor= Discover Companies
     UseModal            On
     TypeText            Account Name                test123
-    PickList            Investor Type              Bank 
+    PickList            Investor Type               Bank
     ClickText           Save                        partial_match=False
+    ClickText           Log out as Loai Alarayedh
+    Typetext            Username                    ${username}
+    Typetext            Password                    ${password}
+    ClickText           Setup                       anchor=Salesforce Help
+    ClickText           Opens in a new tab
+    SwitchWindow        NEW
+    TypeText            Quick Find                  Users
+    ClickText           Users                       anchor=User Management Settings
+    ClickText           Callahan, Michael
+    ClickText           Login
+    ClickText           Accounts
+    ClickText           Select a List View
+    ClickText           All Accounts
+    ClickText           Edit
     ClickText           RMs are not allowed to change Account name.
     ClickText           Cancel
