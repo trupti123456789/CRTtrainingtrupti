@@ -350,12 +350,16 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     UseModal            On
     TypeText            Account Name                test123
     PickList            Investor Type               Bank
+    ComboBox            Search People...            Loai Alarayedh
+    PickList            Billing Country             Afghanistan
     ClickText           Save                        partial_match=False
+    ${href_content}=    GetUrl
+    ${url}=             Evaluate                    $href_content.split("/")[6]
     ClickText           Log out as Loai Alarayedh
-    GoTo                ${login_url} 
+    GoTo                ${login_url}
     TypeText            Username                    ${username}
     TypeText            Password                    ${password}
-    Cli
+    ClickText           Log In to Sandbox
     ClickText           Setup                       anchor=Salesforce Help
     ClickText           Opens in a new tab
     SwitchWindow        NEW
@@ -363,6 +367,7 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText           Users                       anchor=User Management Settings
     ClickText           Callahan, Michael
     ClickText           Login
+    
     ClickText           Accounts
     ClickText           Select a List View
     ClickText           All Accounts
