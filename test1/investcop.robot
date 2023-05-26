@@ -229,8 +229,7 @@ Edit Call Note' button Remove all B on Call Note Screen
     ClickText           SUBJECT                     anchor=Top 10 Activities Added
 
 automated for PE - NA Functionality 
-    [tags]              PE-NA                     Git Repo Exercise
-    Appstate            Home
+    [tags]              PE-NA                       Git Repo Exercise
     ClickText           Setup                       anchor=Salesforce Help
     ClickText           Opens in a new tab
     SwitchWindow        NEW
@@ -239,5 +238,40 @@ automated for PE - NA Functionality
     ClickText           profiles
     ClickText           SSO - PE NA Platform
     ClickText           View Users
-    ClickText           Bersch, Tim
+    ClickText           Bourchtein, Vitali
     ClickText           Login
+    VerifyText          Meeting Added - Last 7 days (3)
+    VerifyText          Deals by Status
+    VerifyText          Deals by Month
+    VerifyText          Deals by Industry
+    VerifyText          Deals by Source
+    VerifyText          Important Links
+    VerifyText          Recent Items (4)
+    VerifyText          General Business News(9)
+    VerifyText          Home
+    VerifyText          Accounts
+    VerifyText          Contacts
+    VerifyText          Deals
+    VerifyText          Portfolio Companies
+    ClickText           More
+    VerifyText          Conferences
+    VerifyText          Reports
+    VerifyText          Dashboards
+    clicktext           Deals
+    Clicktext           Select a List View
+    VerifyText          Active - CINA
+    VerifyText          Active - CI TECH
+    VerifyText          Active - CIE
+    ClickText           Recently Viewed
+    ClickText           New
+    TypeText            Name                        TestDeal1
+    PickList            Industry                    Industrial Services
+    PickList            HQ State/Province           Alabama
+    TypeText            HQ City                     hyderabad
+    TypeText            Description                 Testcase1
+    TypeText            Revenue                     500000
+    TypeText            Equity Size                 200
+    ClickText           Date Received
+    ClickText           Today
+    ClickText           Save                        partial_match=False
+
