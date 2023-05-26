@@ -228,3 +228,16 @@ Edit Call Note' button Remove all B on Call Note Screen
     ClickText           Activity
     ClickText           SUBJECT                     anchor=Top 10 Activities Added
 
+automated for PE - NA Functionality 
+    [tags]              PE-NA                     Git Repo Exercise
+    Appstate            Home
+    ClickText           Setup                       anchor=Salesforce Help
+    ClickText           Opens in a new tab
+    SwitchWindow        NEW
+    SwitchWindow        2
+    TypeText            Quick Find                  Profiles
+    ClickText           profiles
+    ClickText           SSO - PE NA Platform
+    ClickText           View Users
+    ClickText           Bersch, Tim
+    ClickText           Login
