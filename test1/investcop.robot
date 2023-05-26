@@ -377,7 +377,8 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText            All Accounts
     ClickText            Search...
     ComboBox             Search Accounts and more...                             ${url1}
-    GoTo                 ${url1}
+    ${fullID}  =              Catenate                     ${login_url}       ${url1}
+    GoTo                ${fullID}
     ClickText            Edit
     TypeText             Account Name                test1
     ClickText            Save                        partial_match=False
