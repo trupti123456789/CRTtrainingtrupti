@@ -229,6 +229,7 @@ Edit Call Note' button Remove all B on Call Note Screen
     ClickText           SUBJECT                     anchor=Top 10 Activities Added
 
 automated for PE - NA Functionality 
+Login as 'SSO - PE NA Platform User' profile user 
     [tags]              PE-NA                       Git Repo Exercise
     ClickText           Setup                       anchor=Salesforce Help
     ClickText           Opens in a new tab
@@ -257,6 +258,7 @@ automated for PE - NA Functionality
     VerifyText          Conferences
     VerifyText          Reports
     VerifyText          Dashboards
+Click Deals Tab     
     clicktext           Deals
     Clicktext           Select a List View
     VerifyText          Active - CINA
@@ -274,4 +276,80 @@ automated for PE - NA Functionality
     ClickText           Date Received
     ClickText           Today
     ClickText           Save                        partial_match=False
+    VerifyText          Details
+    VerifyText          Related
+    clicktext           Related
+    VerifyText          Activity History (0)        anchor=View All
+    VerifyText          Edit
+    VerifyText          Delete
+    VerifyText          Clone
+    ClickText           Show more actions
+    VerifyText          Sharing
+Click on Portfolio Companies Tab
+    clicktext           Portfolio Companies
+    ClickText           New
+    UseModal            On
+    ClickText           CINA Portfolio CompanyCINA Portfolio Company
+    ClickText           CIE Portfolio CompanyCIE Portfolio Company
+    ClickText           Next
+    TypeText            Name                        TestPortfolioCompanies1
+    PickList            Industry                    Energy
+    PickList            HQ Region                   UK
+    TypeText            HQ City                     hyderabad
+    ClickText           Save                        partial_match=False
+    VerifyText          Details
+    ClickText           More                        anchor=Portfolio Bankers
+    VerifyText          Related
+    ClickText           Related
+    VerifyText          Activity History (0)        anchor=View All
+    VerifyText          Edit
+    VerifyText          Delete
+    VerifyText          Clone
+    ClickText           Show more actions
+    VerifyText          Sharing
+Duplicate Rule: Contact Unique First Name Last Name and Mobile or Phone or Email 
+    [tags]              CI Functionality            Git Repo Exercise
+    ClickText           Contacts
+    ClickText           New
+    UseModal            On
+    ClickText           CI ContactCI: Use this for most contacts (just track contact/address information)
+    ClickText           Next
+    TypeText            First Name                  TestCI
+    TypeText            Last Name                   CIfunction
+    ComboBox            Search Accounts...          TestAccount
+    TypeText            Email                       trupti@investcorp.com
+    TypeText            Phone 1                     56788877
+    ClickText           Save                        partial_match=False
+    UseModal            Off
+    ClickText           Contacts
+    ClickText           New
+    UseModal            On
+    ClickText           CI ContactCI: Use this for most contacts (just track contact/address information)
+    ClickText           Next
+    TypeText            First Name                  TestCI
+    TypeText            Last Name                   CIfunction
+    ComboBox            Search Accounts...          TestAccount
+    TypeText            Email                       trupti@investcorp.com
+    TypeText            Phone 1                     56788877
+    ClickText           Save                        partial_match=False
+    ClickText           Save                        partial_match=False
+    ClickText           View Duplicates
+    ClickText           Close this window           anchor=Close error dialog
+    UseModal            Off
+Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account) & try to change Account’s Name  
 
+    ClickText           Setup                       anchor=Salesforce Help
+    ClickText           Opens in a new tab
+    SwitchWindow        NEW
+    TypeText            Quick Find                  Users
+    ClickText           Users                       anchor=User Management Settings
+    ClickText           Alarayedh, Loai
+    ClickText           Login
+    ClickText           Accounts
+    ClickText           New                         anchor= Discover Companies                      
+    UseModal            On
+    TypeText            Account Name                test123
+    PickList            Investor Type              Bank 
+    ClickText           Save                        partial_match=False
+    ClickText           RMs are not allowed to change Account name.
+    ClickText           Cancel
