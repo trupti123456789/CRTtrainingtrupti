@@ -356,7 +356,6 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     PickList             Billing Country             Afghanistan
     ClickText            Save                        partial_match=False
     ${href_content1}=    GetUrl
-    ${url1} =            Evaluate                    $href_content1.split("/")[6]
     ClickText            Log out as Loai Alarayedh
     GoTo                 ${login_url}
     TypeText             Username                    ${username}
@@ -375,9 +374,8 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText            Accounts
     ClickText            Select a List View
     ClickText            All Accounts
-    GoTo                 ${href2}    
     ${url1} =            Evaluate                    $href_content1.split("/")[6]
-    ${fullID}=           Catenate                    ${login_url}                ${url1}
+    ${fullID}=           Catenate                   ${URL}                 ${url1}
     GoTo                 ${fullID}
     ClickText            Edit
     TypeText             Account Name                test1
