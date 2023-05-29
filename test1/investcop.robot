@@ -375,6 +375,8 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText            Accounts
     ClickText            Select a List View
     ClickText            All Accounts
+    GoTo                 ${href2}    
+    ${url1} =            Evaluate                    $href_content1.split("/")[6]
     ${fullID}=           Catenate                    ${login_url}                ${url1}
     GoTo                 ${fullID}
     ClickText            Edit
