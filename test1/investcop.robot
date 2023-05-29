@@ -27,7 +27,8 @@ Create some Test data records for 'PE Team Member' object
     ClickText            Save                        partial_match=False
  Login as 'SSO - PE Europe Platform User' profile user 
 
-    TypeText             Search Accounts and more...                             Tim Bersch
+    ClickText            Search...
+    TypeText             Search...                   Tim Bersch
     ClickText            Tim Bersch
 
     ClickText            Search...                   anchor=PE- Europe
@@ -217,8 +218,9 @@ Edit Call Note' button Remove all B on Call Note Screen
 automated for PE - NA Functionality 
 Login as 'SSO - PE NA Platform User' profile user 
     [tags]               PE-NA                       Git Repo Exercise
-    TypeText             Search Accounts and more...                             Bourchtein, Vitali
-    ClickText              Bourchtein, Vitali
+    ClickText            Search...
+    TypeText             Search...                   Vitali Bourchtein
+    ClickText            Vitali Bourchtein
     VerifyText           Meeting Added - Last 7 days (3)
     VerifyText           Deals by Status
     VerifyText           Deals by Month
@@ -315,10 +317,15 @@ Duplicate Rule: Contact Unique First Name Last Name and Mobile or Phone or Email
     ClickText            Close this window           anchor=Close error dialog
     UseModal             Off
 Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account) & try to change Account's Name
-   TypeText             Search Accounts and more...                             Alarayedh, Loai
-    ClickText             Alarayedh, Loai
+
+    ClickText            Search...
+    TypeText             Search...                   Loai                        Alarayedh
+    ClickText            Loai                        Alarayedh
     ClickText            Accounts
     ClickText            New                         anchor= Discover Companies
+    UseModal             On
+    ClickText            HF Account HF Account User
+    ClickText            Next
     UseModal             On
     TypeText             Account Name                test123
     PickList             Investor Type               Bank
@@ -326,13 +333,16 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     PickList             Billing Country             Afghanistan
     ClickText            Save                        partial_match=False
     ${href_content1}=    GetUrl
-    TypeText             Search Accounts and more...                              Callahan, Michael
-    ClickText             Callahan, Michael
+    ClickText            Search...
+    TypeText             Search...                   Michael Callahan
+    ClickText            Michael Callahan
     ClickText            Accounts
     ClickText            Select a List View
     ClickText            All Accounts
+    Sleep                2
     ${url1} =            Evaluate                    $href_content1.split("/")[6]
     ${fullID}=           Catenate                    ${URL}                      ${url1}
+    Sleep                2
     GoTo                 ${fullID}
     ClickText            Edit
     TypeText             Account Name                test1
