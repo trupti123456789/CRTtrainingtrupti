@@ -341,8 +341,8 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText            All Accounts
     Sleep                2
     ${url1} =            Evaluate                    $href_content1.split("/")[6]
-    #${fullID}=           Catenate                ${login_url}                   ${url1}
-    Sleep                2
+    ${light}             Set Variable                       /lightning/r/Account/
+    ${fullID}=           Catenate                ${login_url}           ${light}             ${url1}
     GoTo                 ${fullID}
     ClickText            Edit
     TypeText             Account Name                test1
