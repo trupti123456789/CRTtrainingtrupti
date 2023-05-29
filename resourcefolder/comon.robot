@@ -10,6 +10,7 @@ ${login_url}                    https://investcorp--devfulcrum.sandbox.lightning
 ${username}                     mounika.t@cloudfulcrum.com.devfulcrum
 ${password}                     Investcorp@11
 ${fullID}
+${URL}                https://investcorp--devfulcrum.sandbox.lightning.force.com/
 *** Keywords ***
 Setup Browser
     Set Library Search Order    QWeb                        QForce
