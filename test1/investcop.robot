@@ -27,18 +27,10 @@ Create some Test data records for 'PE Team Member' object
     ClickText            Save                        partial_match=False
  Login as 'SSO - PE Europe Platform User' profile user 
 
-    VerifyItem           utility:setup               tag=lightning-icon
-    ClickText            Setup                       anchor=Salesforce Help
-    ClickText            Setup for current app
-    SwitchWindow         NEW
-    VerifyText           Setup Home
+    TypeText             Search Accounts and more...                             Tim Bersch
+    ClickText            Tim Bersch
 
-    ClickText            Setup                       anchor=Salesforce Help
-    ClickText            Opens in a new tab
-    SwitchWindow         NEW
-    SwitchWindow         2
-    TypeText             Quick Find                  Profiles
-    ClickText            profiles
+    ClickText            Search...                   anchor=PE- Europe
     ClickText            SSO - PE Europe Platform
     ClickText            View Users
     ClickText            Bersch, Tim
@@ -47,6 +39,8 @@ Create some Test data records for 'PE Team Member' object
     ClickText            Accounts
     ClickText            New                         anchor= Discover Companies
     UseModal             On
+    ClickText            CI AccountCI Account
+    ClickText            Next
     TypeText             Account Name                PE_Account1
     ComboBox             Search Accounts...          PEAccountTC
     MultiPickList        Geography                   North America
@@ -170,17 +164,9 @@ Contact on 'Investcorp Employee' Contact Record Type
     TypeText             Value                       ${url}
     ClickText            Save
 Login as 'PRMW standard User' profile 
-    ClickText            Setup                       anchor=Salesforce Help
-    ClickText            Opens in a new tab
-    SwitchWindow         NEW
-    TypeText             Quick Find                  profile
-    ClickText            Profile
-    ClickText            P                           partial_match=False
-    ClickText            PRMW standard User
-    ClickText            View Users
-    clicktext            Alarayedh, Loai
-    ClickText            Edit
-    ClickText            login
+    TypeText             Search Accounts and more...                             Alarayedh, Loai
+    ClickText            Alarayedh, Loai
+
 create Call Note on account record with Investcorp Attendee 
     ClickText            Accounts
     ClickText            Select a List View
@@ -231,16 +217,8 @@ Edit Call Note' button Remove all B on Call Note Screen
 automated for PE - NA Functionality 
 Login as 'SSO - PE NA Platform User' profile user 
     [tags]               PE-NA                       Git Repo Exercise
-    ClickText            Setup                       anchor=Salesforce Help
-    ClickText            Opens in a new tab
-    SwitchWindow         NEW
-    SwitchWindow         2
-    TypeText             Quick Find                  Profiles
-    ClickText            profiles
-    ClickText            SSO - PE NA Platform
-    ClickText            View Users
-    ClickText            Bourchtein, Vitali
-    ClickText            Login
+    TypeText             Search Accounts and more...                             Bourchtein, Vitali
+    ClickText              Bourchtein, Vitali
     VerifyText           Meeting Added - Last 7 days (3)
     VerifyText           Deals by Status
     VerifyText           Deals by Month
@@ -337,16 +315,8 @@ Duplicate Rule: Contact Unique First Name Last Name and Mobile or Phone or Email
     ClickText            Close this window           anchor=Close error dialog
     UseModal             Off
 Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account) & try to change Account's Name
-    ClickText            Setup                       anchor=Salesforce Help
-    ClickText            Opens in a new tab
-    SwitchWindow         NEW
-    SwitchWindow         2
-    TypeText             Quick Find                  Profiles
-    ClickText            profiles
-    ClickText            PRMW Standard User
-    ClickText            View Users
-    ClickText            Alarayedh, Loai
-    ClickText            Login
+   TypeText             Search Accounts and more...                             Alarayedh, Loai
+    ClickText             Alarayedh, Loai
     ClickText            Accounts
     ClickText            New                         anchor= Discover Companies
     UseModal             On
@@ -356,26 +326,13 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     PickList             Billing Country             Afghanistan
     ClickText            Save                        partial_match=False
     ${href_content1}=    GetUrl
-    ClickText            Log out as Loai Alarayedh
-    GoTo                 ${login_url}
-    TypeText             Username                    ${username}
-    TypeText             Password                    ${password}
-    ClickText            Log In to Sandbox
-    ClickText            Setup                       anchor=Salesforce Help
-    ClickText            Opens in a new tab
-    SwitchWindow         NEW
-    SwitchWindow         2
-    TypeText             Quick Find                  Profiles
-    ClickText            profiles
-    ClickText            PRMW Standard User
-    ClickText            View Users
-    ClickText            Callahan, Michael
-    ClickText            Login
+    TypeText             Search Accounts and more...                              Callahan, Michael
+    ClickText             Callahan, Michael
     ClickText            Accounts
     ClickText            Select a List View
     ClickText            All Accounts
     ${url1} =            Evaluate                    $href_content1.split("/")[6]
-    ${fullID}=           Catenate                   ${URL}                 ${url1}
+    ${fullID}=           Catenate                    ${URL}                      ${url1}
     GoTo                 ${fullID}
     ClickText            Edit
     TypeText             Account Name                test1
