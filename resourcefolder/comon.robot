@@ -39,4 +39,5 @@ Home
     Run Keyword If              ${login_status}             Login
     ClickText                   Home
     VerifyTitle                 Home | Salesforce
+    GoTo                        ${fullID}    
 
