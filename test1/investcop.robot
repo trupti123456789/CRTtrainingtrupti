@@ -339,11 +339,11 @@ Login as a ‘IRMW US Sales Team' Role user (user who doesn’t own the Account)
     ClickText            Accounts
     ClickText            Select a List View
     ClickText            All Accounts
-    Sleep                2
+    Sleep                20
     ${url1} =            Evaluate                    $href_content1.split("/")[6]
-    ${light}             Set Variable                       /lightning/r/Account/
-    ${fullID}=           Catenate                ${login_url}           ${light}             ${url1}
-    GoTo                 ${fullID}
+    ##${light}             Set Variable                       /lightning/r/Account/
+    #${fullID}=           Catenate                ${login_url}           ${light}             ${url1}
+    GoTo                 https://investcorp--devfulcrum.sandbox.my.salesforce.com/${url1}
     ClickText            Edit
     TypeText             Account Name                test1
     ClickText            Save                        partial_match=False
