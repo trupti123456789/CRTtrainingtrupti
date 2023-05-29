@@ -7,9 +7,11 @@ Suite Setup                     OpenBrowser                 about:blank         
 *** Variables ***
 ${home_url}                     ${login_url}/lightning/page/home
 ${login_url}                    https://investcorp--devfulcrum.sandbox.lightning.force.com/
+
 ${username}                     mounika.t@cloudfulcrum.com.devfulcrum
 ${password}                     Investcorp@11
-${fullID}                        ${login_url}/lightning/r/Account/${url1}/view
+#${fullID}                        ${login_url}/lightning/r/Account/${url1}/view
+
 *** Keywords ***
 Setup Browser
     Set Library Search Order    QWeb                        QForce
@@ -39,5 +41,4 @@ Home
     Run Keyword If              ${login_status}             Login
     ClickText                   Home
     VerifyTitle                 Home | Salesforce
-    GoTo                        ${fullID}    
-
+    
