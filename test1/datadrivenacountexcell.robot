@@ -14,7 +14,6 @@ reading an account With Data with  ${Account_Name}   ${Sales_Owner}    ${Phone} 
 REading an account With Data
     [Arguments]    ${Account_Name}             ${Sales_Owner}              ${Phone}                    ${Type}                     ${Industry}    ${Employees}    ${Annual_Revenue}
     [tags]         Account
-    Home
     LaunchApp      Sales
 
 *** Test Case ***
