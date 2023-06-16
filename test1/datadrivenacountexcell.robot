@@ -1,7 +1,7 @@
 *** Settings ***
 Resource           ../resourcefolder/commonaccountexel.robot
 Library            DataDriver                  reader_class=TestDataApi    name=accountexcelmultipl.xlsx                           #iterates through the Leads csv
-#Suite Setup       Setup Browser
+Suite Setup       Setup Browser
 Suite Teardown     End suite
 Test Template      Reading account field
 Library            QForce
