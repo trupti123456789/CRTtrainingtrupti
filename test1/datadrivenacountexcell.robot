@@ -18,7 +18,9 @@ REading an account With Data
 
 *** Test Case ***
     Appstate       Home
-    clicktext      Account
+    ClickText    App Launcher
+    LaunchApp    Sales
+    ClickText    Accounts
     clicktext      ${Account Name}
     clicktext      Details
     VerifyText     ${Account Name}             anchor=Fax
