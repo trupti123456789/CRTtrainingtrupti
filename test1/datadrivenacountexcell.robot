@@ -27,6 +27,6 @@ REading an account With Data
     VerifyText     ${Sales Owner}
     VerifyText     ${Phone}                    anchor= Fax
     VerifyText     ${Type}
-    VerifyText     ${Industry}
+    VerifyText     ${Industry}                 Anchor=Type
     VerifyText     ${Employees}
     VerifyText     ${Annual Revenue}
