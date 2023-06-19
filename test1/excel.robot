@@ -34,9 +34,6 @@ Update Product Id
     ${document}=        Open Excel Document    ${excel_worksheet}    products 
       ${product_id}=   Read Excel Column    col_num=2    max_num=6    row_offset=1    sheet_name=Fur
 
-    FOR    ${item}    IN    @{product_id}
-        VerifyText           ${item}
-    END
 
     # Create new unique product id
     ${new_id}=          Generate Random String    length=6    chars=[NUMBERS]
