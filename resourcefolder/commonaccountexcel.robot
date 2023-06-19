@@ -4,6 +4,7 @@ Library                         QForce
 Library                         String
 Library                         ExcelLibrary
 Library                         ../libraries/GitOperations.py
+Suite Setup        OpenBrowser    about:blank    chrome
 
 
 *** Variables ***
