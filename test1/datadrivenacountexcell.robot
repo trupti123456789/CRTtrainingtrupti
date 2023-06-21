@@ -18,8 +18,6 @@ REading an account With Data
 
 *** Test Case ***
     Appstate       Home
-    ClickText    App Launcher
-    LaunchApp    Sales
     ClickText    Accounts
     clicktext      ${Account Name}
     clicktext      Details
