@@ -2,7 +2,7 @@
 # before running this suite.
 
 *** Settings ***
-Resource                  ../resources/ncino.resource
+Resource                  ../resourcefolder/commonncino.robot
 Suite Setup               Setup Browser
 Suite Teardown            End suite
 
