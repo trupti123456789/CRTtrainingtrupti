@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                  ../resourcefolder/comon.robot
+Resource                  ../resources/ncinoresource.robot
 Suite Setup               Setup Browser
 Suite Teardown            End suite
 
