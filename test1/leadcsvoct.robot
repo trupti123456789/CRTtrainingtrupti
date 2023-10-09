@@ -12,7 +12,7 @@ Entering A Lead With Data with     ${Last Name}        ${Company}    ${Lead Curr
 
 *** Keywords ***
 Entering A Lead With Data
-    [Arguments]     ${Last Name}                ${Company}                  ${Lead Currency}    ${Lead Status}
+    [Arguments]     ${Last Name}           ${Company}          ${Lead Currency}    ${Lead Status}
     [tags]          Lead
    
    
