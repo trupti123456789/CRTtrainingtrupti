@@ -10,7 +10,7 @@ Suite Setup        OpenBrowser    about:blank    chrome
 *** Variables ***
 # Salesforce instance. NOTE: Should be overwritten in CRT variables
 ${home_url}                     ${login_url}/lightning/page/home
-${Accountexcel_worksheet}       ${CURDIR}/../data/accountexcel123.xlsx
+${Accountexcel_worksheet12}       ${CURDIR}/../data/Lead.12.xlsx
 ${git_branch}                   main
 
 *** Keywords ***
