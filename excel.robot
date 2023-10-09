@@ -1,8 +1,11 @@
 *** Settings ***
-Resource                ../resources/common.resource
+Resource                ../resourcefolder/commonexcel.robot
 Test Teardown           Close All Excel Documents
 Suite Setup             Setup Browser
 Suite Teardown          End Suite
+Library                 ExcelLibrary
+Library                 QWeb
+
 
 *** Test Cases ***
 Verify Products
