@@ -7,7 +7,7 @@ Suite Teardown      End suite
 
 *** Test Cases ***
   Appstate        Home
-Entering A Lead With Data with     ${Last Name}        ${Company}    ${Lead Currency}  ${Lead Status} 
+Entering A Lead With Data with     ${Last_Name}        ${Company}    ${Lead_Currency}  ${Lead_Status} 
     [Tags]          AllData
 
 *** Keywords ***
