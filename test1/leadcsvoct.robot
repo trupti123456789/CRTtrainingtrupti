@@ -10,11 +10,6 @@ Suite Teardown      End suite
 Entering A Lead With Data with     ${Last_Name}        ${Company}    ${Lead_Currency}  ${Lead_Status} 
     [Tags]          AllData
 
-*** Keywords ***
-Entering A Lead With Data
-    [Arguments]     ${Last Name}           ${Company}          ${Lead Currency}    ${Lead Status}
-    [tags]          Lead
-   
    
     LaunchApp       Sales
 
@@ -38,9 +33,9 @@ Entering A Lead With Data
     ClickText       Leads
     VerifyText      Recently Viewed             timeout=120s
 
-    
+    ClickText       ${first Name}
     ClickText       Delete
     ClickText       Delete
     VerifyText      Recently Viewed
-    
+    VerifyNoText    ${First Name}
     VerifyNoText    ${Last Name}
