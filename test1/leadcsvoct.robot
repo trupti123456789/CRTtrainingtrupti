@@ -25,7 +25,7 @@ Entering A Lead With Data
     UseModal        On                          # Only find fields from open modal dialog
 
 
-    TypeText        Last Name                   ${TEST_NAME}
+    TypeText        Last Name                   ${last NAME}
     Picklist        Lead Status                 ${Lead Status}
     TypeText        Company                     ${Company}
     PickList        Lead Currency               ${Lead Currency}
