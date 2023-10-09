@@ -13,7 +13,7 @@ read all the Account fields from excel sheet.
     ClickText             ${Account Name} 
     ClickText            Details
     # Start reading values from the second row, max number needs to be provided with offset
-    ${Account Name} =    Read Excel Column           col_num=1                   max_num=1    row_offset=1    sheet_name=Sheet1
-    ${Sales Owner} =     Read Excel Column           col_num=2                   max_num=1    row_offset=1    sheet_name=Sheet1
-    ${Phone} =           Read Excel Column           col_num=3                   max_num=1    row_offset=1    sheet_name=Sheet1
-    ${Industry} =        Read Excel Column           col_num=5                   max_num=1    row_offset=1    sheet_name=Sheet1
+    ${Last Name} =    Read Excel Column           col_num=1                   max_num=1    row_offset=1    sheet_name=Sheet1
+    ${company} =     Read Excel Column           col_num=2                   max_num=1    row_offset=1    sheet_name=Sheet1
+    ${Lead Status} =           Read Excel Column           col_num=3                   max_num=1    row_offset=1    sheet_name=Sheet1
+    ${Currency} =        Read Excel Column           col_num=5                   max_num=1    row_offset=1    sheet_name=Sheet1
