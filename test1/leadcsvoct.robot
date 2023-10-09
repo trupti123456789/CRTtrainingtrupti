@@ -7,7 +7,7 @@ Suite Teardown      End suite
 
 *** Test Cases ***
   Appstate        Home
-Entering A Lead With Data with     ${Last Name}        ${Company}    ${Lead Currency}  ${Lead Status} 
+Entering A Lead With Data with     ${Last Name}        ${Company}     ${Lead Status} 
     [Tags]          AllData
 
    
@@ -23,7 +23,6 @@ Entering A Lead With Data with     ${Last Name}        ${Company}    ${Lead Curr
     TypeText        Last Name                   ${Last Name}
     Picklist        Lead Status                 ${Lead Status}
     TypeText        Company                     ${Company}
-    PickList        Lead Currency               ${Lead Currency}
     ClickText       Save                        partial_match=False
     UseModal        Off
     Sleep           1
@@ -33,7 +32,7 @@ Entering A Lead With Data with     ${Last Name}        ${Company}    ${Lead Curr
     ClickText       Leads
     VerifyText      Recently Viewed             timeout=120s
 
-    ClickText       ${first Name}
+    ClickText     
     ClickText       Delete
     ClickText       Delete
     VerifyText      Recently Viewed
