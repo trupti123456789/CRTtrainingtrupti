@@ -1,6 +1,6 @@
 *** Settings ***
 Resource            ../resourcefolder/Common.robot
-Library             DataDriver                  reader_class=TestDataApi    name=Leadnew.csv  #iterates through the Leads csv
+Library             DataDriver                  reader_class=TestDataApi    name=Lead.12.csv  #iterates through the Leads csv
 Suite Setup         Setup Browser
 Suite Teardown      End suite
 
@@ -25,7 +25,7 @@ Entering A Lead With Data
     UseModal        On                          # Only find fields from open modal dialog
 
 
-    TypeText        Last Name                   ${last NAME}
+    TypeText        Last Name                   ${Last Name}
     Picklist        Lead Status                 ${Lead Status}
     TypeText        Company                     ${Company}
     PickList        Lead Currency               ${Lead Currency}
