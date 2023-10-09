@@ -3,6 +3,8 @@ Library                 QWeb
 Library                 ExcelLibrary
 Library                 String
 Library                 ../libraries/GitOperations.py
+Suite Setup             Setup Browser
+Suite Teardown          End Suite
 
 *** Variables ***
 ${BROWSER}              chrome
