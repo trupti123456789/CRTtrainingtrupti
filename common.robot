@@ -2,7 +2,7 @@
 Library                   QWeb
 Library                   QForce
 Library                   String
-Suite Setup             Open Browser    about:blank    ${BROWSER}
+Suite Setup             Open Browser    about:blank    chrome
 
 *** Variables ***
 ${username}               YOUR USERNAME HERE
