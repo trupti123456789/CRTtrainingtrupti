@@ -12,7 +12,7 @@ Entering A Lead With Data with ${First Name} ${Last Name}    ${Phone}    ${Compa
 *** Keywords ***
 Entering A Lead With Data
     [Arguments]               ${First Name}    ${Last Name}    ${Phone}    ${Company}    ${Website}
-    [tags]                    Lead
+    [tags]                    Leads
     Home
     LaunchApp                 Sales
 
