@@ -7,7 +7,7 @@ Library           DataDriver                  reader_class=TestDataApi    name=L
 *** Test Cases ***
     Appstate      Home
 Entering A Lead With Data with     ${Last Name}        ${Company}     ${Lead Status} 
-    [Tags]        AllData
+    [Tags]        AllData123
 
 
     LaunchApp     Sales
