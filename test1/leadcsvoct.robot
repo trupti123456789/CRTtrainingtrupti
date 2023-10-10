@@ -1,9 +1,6 @@
 *** Settings ***
 Resource          ../resourcefolder/Common.robot
 Library           DataDriver                  reader_class=TestDataApi    name=Lead.12.csv    #iterates through the Leads csv
-Suite Setup       Setup Browser
-Suite Teardown    End suite
-
 
 *** Test Cases ***
     Appstate      Home
