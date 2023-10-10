@@ -3,8 +3,7 @@ Library                   QWeb
 Library                   QForce
 Library                   String
 Suite Setup             Open Browser    about:blank    ${BROWSER}
-Suite Setup       Setup Browser
-Suite Teardown    End suite
+
 
 *** Variables ***
 ${username}               YOUR USERNAME HERE
