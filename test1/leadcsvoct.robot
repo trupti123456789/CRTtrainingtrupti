@@ -1,40 +1,45 @@
 *** Settings ***
-Resource            ../resourcefolder/Common.robot
-Library             DataDriver                  reader_class=TestDataApi    name=Lead.12.csv  #iterates through the Leads csv
-Suite Setup         Setup Browser
-Suite Teardown      End suite
+Resource          ../resourcefolder/Common.robot
+Library           DataDriver                  reader_class=TestDataApi    name=Lead.12.csv    #iterates through the Leads csv
+Suite Setup       Setup Browser
+Suite Teardown    End suite
 
 
 *** Test Cases ***
-  Appstate        Home
+    Appstate      Home
 Entering A Lead With Data with     ${Last Name}        ${Company}     ${Lead Status} 
-    [Tags]          AllData
-
-   
-    LaunchApp       Sales
-
-    ClickText       Leads
-    VerifyText      Recently Viewed             timeout=120s
-    ClickText       New
-    VerifyText      Lead Information
-    UseModal        On                          # Only find fields from open modal dialog
+    [Tags]        AllData
 
 
-    TypeText        Last Name                   ${Last Name}
-    Picklist        Lead Status                 ${Lead Status}
-    TypeText        Company                     ${Company}
-    ClickText       Save                        partial_match=False
-    UseModal        Off
-    Sleep           1
+    LaunchApp     Sales
 
-    #Delete the lead to clean up data
-    LaunchApp       Sales
-    ClickText       Leads
-    VerifyText      Recently Viewed             timeout=120s
+    ClickText     Leads
+    VerifyText    Recently Viewed             timeout=120s
+    ClickText     New
+    VerifyText    Lead Information
+    UseModal      On                          # Only find fields from open modal dialog
 
-    ClickText     
-    ClickText       Delete
-    ClickText       Delete
-    VerifyText      Recently Viewed
-    VerifyNoText    ${First Name}
-    VerifyNoText    ${Last Name}
+
+    TypeText      Last Name                   ${Last Name}
+    Picklist      Lead Status                 ${Lead Status}
+    TypeText      Company                     ${Company}
+    ClickText     Save                        partial_match=False
+    UseModal      Off
+    Sleep         1
+
+    #verifyind data
+    Clicktext     Details
+    VerifyText    Name
+    VerifyText    Company
+    VerifyText    Lead Status
+
+    #converted the lead
+    ClickText     Converted
+    ClickText     Select Converted Status
+    UseModal      On
+    ClickText     Convert                     partial_match=False
+    UseModal      Off
+    UseModal      On
+    UseModal      Off
+    ClickText     Go to Leads
+
