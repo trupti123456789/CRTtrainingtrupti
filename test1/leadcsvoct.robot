@@ -1,18 +1,14 @@
 *** Settings ***
 Resource          ../resourcefolder/Common.robot
 Library           DataDriver                  reader_class=TestDataApi    name=Lead.12.csv    #iterates through the Leads csv
-Test Template                 Entering A Lead With Data
-
-
+Suite Setup       Setup Browser
+Suite Teardown    End suite
 
 
 *** Test Cases ***
     Appstate      Home
 Entering A Lead With Data with     ${Last Name}        ${Company}     ${Lead Status} 
     [Tags]        AllData123
-    *** Keywords ***
-Entering A Lead With Data
-    [Arguments]               ${Last Name}        ${Company}     ${Lead Status} 
 
 
     LaunchApp     Sales
