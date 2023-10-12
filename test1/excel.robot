@@ -9,7 +9,7 @@ Suite Teardown          End Suite
 Verify Products
        
     [Documentation]     Read product names from excel sheet and verify that those can be found from a webshop page
-    [Tags]              excel    products    verify
+    [Tags]              excel 
     GoTo                ${webshop}
     VerifyText          Find your spirit animal
 
