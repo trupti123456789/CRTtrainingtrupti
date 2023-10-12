@@ -5,7 +5,9 @@ Suite Setup             Setup Browser
 Suite Teardown          End Suite
 
 *** Test Cases ***
+
 Verify Products
+       
     [Documentation]     Read product names from excel sheet and verify that those can be found from a webshop page
     [Tags]              excel    products    verify
     GoTo                ${webshop}
