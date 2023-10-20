@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                      ../Resources/common.robot
+Resource                      ../resourcefolder/Common.robot
 Library                      ../Resources/pyLib.py
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
