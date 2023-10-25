@@ -30,7 +30,7 @@ read all the Account fields from excel sheet.
 
 
      FOR    ${item}    IN    @{Account Name} 
-        VerifyText           ${item}
+        TypeText       Account Name                  ${Account Name}
     END
      FOR    ${item}    IN    @{Phone} 
         VerifyText           ${item}
