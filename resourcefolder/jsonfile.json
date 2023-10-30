@@ -10,7 +10,7 @@
              {
                "type":"home" ,
                "number":"123456543"  
-              }'
+              },
               {
                "type":"fax",
                 "number":"2345678"
