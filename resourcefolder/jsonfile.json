@@ -1,0 +1,20 @@
+{
+"firstName":"jerry",
+"lastName":"json",
+"age":"25",
+"address":{
+            "StreetAddress":"21 2nd street",
+            "City":"New Delhi",
+            },
+            "PhoneNumber" :[
+             {
+               "type":"home" ,
+               "number":"123456543"  
+              }'
+              {
+               "type":"fax",
+                "number":"2345678"
+               }
+                ]
+}                        
+             
