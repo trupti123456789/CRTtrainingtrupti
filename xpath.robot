@@ -22,11 +22,11 @@ UseCase1:
     PickList                Status                      Draft
     ClickText               Contract Start Date
     ClickText               Today
-    TypeText                Contract Term (months)*     12
+    TypeText                Contract Term (months)     12
     TypeText                Scope/Milestone/Deliverables                            Test contract Scope
-    TypeText                Billing Contact Email*      trupti@gmail.com
+    TypeText                Billing Contact Email      trupti@gmail.com
     TypeText                Billing Email List          trupti@gmail.com
-    TypeText                Payment Terms*              Dollar
+    TypeText                Payment Terms              Dollar
     ClickText               Customer Signed Date
     ClickText               Today
     ClickText               Save
@@ -107,11 +107,11 @@ UseCase2: As a user I should able to create a Contract created with different st
     PickList                Status                      Draft
     ClickText               Contract Start Date
     ClickText               Today
-    TypeText                Contract Term (months)*     12
+    TypeText                Contract Term (months)     12
     TypeText                Scope/Milestone/Deliverables                            Test contract Scope
-    TypeText                Billing Contact Email*      xyz@test.com
+    TypeText                Billing Contact Email     xyz@test.com
     TypeText                Billing Email List          xyz@test.com
-    TypeText                Payment Terms*              Dollar
+    TypeText                Payment Terms              Dollar
     ClickText               Customer Signed Date
     ClickText               Today
     ClickText               Save
@@ -193,11 +193,11 @@ UseCase4: As a user I should be able to delete an employee after the Project res
     PickList                Status                      Draft
     ClickText               Contract Start Date
     ClickText               Today
-    TypeText                Contract Term (months)*     12
+    TypeText                Contract Term (months)     12
     TypeText                Scope/Milestone/Deliverables                            Test contract Scope
-    TypeText                Billing Contact Email*      xyz@test.com
+    TypeText                Billing Contact Email     xyz@test.com
     TypeText                Billing Email List          xyz@test.com
-    TypeText                Payment Terms*              Dollar
+    TypeText                Payment Terms              Dollar
     ClickText               Customer Signed Date
     ClickText               Today
     ClickText               Save
@@ -289,11 +289,11 @@ UseCase5: As a user I should be able to delete the project from CRM once the pro
     PickList                Status                      Draft
     ClickText               Contract Start Date
     ClickText               Today
-    TypeText                Contract Term (months)*     12
+    TypeText                Contract Term (months)     12
     TypeText                Scope/Milestone/Deliverables                            Test contract Scope
-    TypeText                Billing Contact Email*      xyz@test.com
+    TypeText                Billing Contact Email      xyz@test.com
     TypeText                Billing Email List          xyz@test.com
-    TypeText                Payment Terms*              Dollar
+    TypeText                Payment Terms             Dollar
     ClickText               Customer Signed Date
     ClickText               Today
     ClickText               Save
@@ -386,11 +386,11 @@ UseCase6: As a user I should be able to remove an employee from Project resoruce
     PickList                Status                      Draft
     ClickText               Contract Start Date
     ClickText               Today
-    TypeText                Contract Term (months)*     12
+    TypeText                Contract Term (months)     12
     TypeText                Scope/Milestone/Deliverables                            Test contract Scope
-    TypeText                Billing Contact Email*      xyz@test.com
+    TypeText                Billing Contact Email      xyz@test.com
     TypeText                Billing Email List          xyz@test.com
-    TypeText                Payment Terms*              Dollar
+    TypeText                Payment Terms              Dollar
     ClickText               Customer Signed Date
     ClickText               Today
     ClickText               Save
