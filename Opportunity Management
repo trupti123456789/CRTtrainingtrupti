@@ -168,21 +168,29 @@ add Products
     ClickText           Products(0)                 Anchor=Quotes(0)
     ClickText           New
     TypeText            Product Name                oppo laptop1
+    Clicktext           r1c2
+    Typetext            Quantity                    1.00
     TypeText            Product Code                001
     ClickText           Active
     ClickText           Save
     ClickText           New
     TypeText            Product Name                oppo laptop2
+     Clicktext           r1c2
+    Typetext            Quantity                    1.00
     TypeText            Product Code                002
     ClickText           Active
     ClickText           Save
     ClickText           New
     TypeText            Product Name                oppo laptop4
+     Clicktext           r1c2
+    Typetext            Quantity                    1.00
     TypeText            Product Code                005
     ClickText           Active
     ClickText           Save
     ClickText           New
     TypeText            Product Name                oppo laptop5
+     Clicktext           r1c2
+    Typetext            Quantity                    1.00
     TypeText            Product Code                001
     ClickText           Active
     ClickText           Save
